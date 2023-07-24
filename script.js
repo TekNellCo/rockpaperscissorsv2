@@ -1,25 +1,29 @@
 let buttons = document.querySelectorAll('.choice');
 let result = document.querySelector('.result');
+let playerS = document.querySelector('.playerscore');
+let computerS = document.querySelector('.computerscore');
 
+let playerScore = 0;
+let computerScore = 0;
 
 let array = ["rock","paper","scissors"];
 let gameResult = ["You win,","Computer wins,","Tie,"];
 
 function game(pC, cC){
     if(pC === cC){
-        return end = gameResult[2]
+        return  gameResult[2]
     }else if( pC === array[0] && cC == array[1]){
-        return end = gameResult[1]
+        return  gameResult[1]
     }else if(pC === array[0] && cC == array[2] ){
-        return end = gameResult[0]
+        return  gameResult[0]
     }else if(pC === array[1] && cC == array[2]){
-        return end = gameResult[1]
+        return  gameResult[1]
     }else if (pC === array[1] && cC == array[0]){
-        return end = gameResult[0]
+        return  gameResult[0]
     }else if (pC == array[2] && cC == array[1]){
-        return end  = gameResult[0]
+        return  gameResult[0]
     }else if(pC == array[2] && cC == array[0]){
-        return end = gameResult[1]
+        return  gameResult[1]
     }else{return
     }
 }
@@ -35,20 +39,29 @@ function computerChoice(){
     }
 }
 
+function scoreBoard(result){
+    if(computerScore === 5){
+        alert("game over")
+    }else if (playerScore === 5){
+        alert("player wins")
+    }else if( result === gameResult[0]){
+        playerS.textContent = ++playerScore;
+    }else if( result === gameResult[1]){
+        computerS.textContent = ++computerScore;
+    }else{}
+    console.log(playerScore)
+console.log(computerScore)
+}
+
 buttons.forEach((e)=>{
     e.addEventListener('click', ()=>{
         let pC = e.dataset.choice;
         let cC = computerChoice();
         let resultString = game(array[`${pC}`], array[`${cC}`]);
-        return result.textContent = `${resultString} you selected ${array[pC]} and computer selected ${array[cC]}`
-
-
-
+        scoreBoard(resultString);
+        return result.textContent = `${resultString} you selected ${array[pC]} and computer selected ${array[cC]}`;
     })
 })
-
-
-
 
 
 
