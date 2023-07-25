@@ -3,3 +3,46 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root{
+    --color-barbie: #fec2c2;
+    --color-pink:#fec2c2;
+    --color-peach: #fec2c2;
+    --color-light-pink: #fe9bca;
+    --color-dark-pink: #e96baa;
+    --color-purple-pink: #c391b6;
+}
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.bigbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:solid;
+    width: 50rem;
+    height:40rem;
+}
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    border: solid;
+    width: 30rem;
+    height: 15rem;
+    text-align: center;
+}
+.scores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: solid;
+    width: 20rem;
+    height: 10rem;
+    font-size: 2rem;
+}
+
+

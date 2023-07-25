@@ -45,12 +45,20 @@ function scoreBoard(result){
     }else if (playerScore === 5){
         alert("player wins")
     }else if( result === gameResult[0]){
-        playerS.textContent = ++playerScore;
+        playerS.textContent = `Player score : ${++playerScore}`;
     }else if( result === gameResult[1]){
-        computerS.textContent = ++computerScore;
-    }else{}
-    console.log(playerScore)
-console.log(computerScore)
+        computerS.textContent = `Computer score : ${++computerScore}`;
+    }else{return}
+}
+
+function resultColor(resultString){
+    if(resultString === gameResult[0]){
+        result.style.color = "var(--color-dark-pink)"
+    }else if(resultString === gameResult[1]){
+        result.style.color = "var(--color-purple-pink)"
+    }else{
+        result.style.color = "var(--color-peach)"
+    }
 }
 
 buttons.forEach((e)=>{
@@ -59,6 +67,7 @@ buttons.forEach((e)=>{
         let cC = computerChoice();
         let resultString = game(array[`${pC}`], array[`${cC}`]);
         scoreBoard(resultString);
+        resultColor(resultString);
         return result.textContent = `${resultString} you selected ${array[pC]} and computer selected ${array[cC]}`;
     })
 })
@@ -75,3 +84,6 @@ buttons.forEach((e)=>{
 
 
 
+for(i=0; i < 0; ++i){
+    
+}
