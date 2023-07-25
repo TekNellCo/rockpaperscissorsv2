@@ -41,9 +41,9 @@ function computerChoice(){
 
 function scoreBoard(result){
     if(computerScore === 5){
-        alert("game over")
+        alert("Game over : You lose")
     }else if (playerScore === 5){
-        alert("player wins")
+        alert("Player wins!")
     }else if( result === gameResult[0]){
         playerS.textContent = `Player score : ${++playerScore}`;
     }else if( result === gameResult[1]){
